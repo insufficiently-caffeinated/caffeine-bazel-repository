@@ -1,0 +1,4 @@
+module(
+    name = "fmt",
+    version = "8.1.0",
+)
