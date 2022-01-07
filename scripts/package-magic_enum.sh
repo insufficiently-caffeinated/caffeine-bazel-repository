@@ -4,9 +4,9 @@ set -euxo pipefail
 
 source scripts/package-common.sh
 
-setup immer "$1"
+setup magic_enum "$1"
 
-url="https://github.com/arximboldi/immer/archive/refs/tags/v$version.zip"
+url="https://github.com/Neargye/magic_enum/archive/refs/tags/v$version.zip"
 
 wget -q "$url" -O "$tmpdir/$package.zip"
 
