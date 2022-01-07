@@ -1,0 +1,4 @@
+module(
+    name = "immer",
+    version = "0.6.2",
+)
