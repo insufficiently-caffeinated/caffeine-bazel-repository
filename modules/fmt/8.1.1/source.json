@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/fmtlib/fmt/releases/download/8.1.1/fmt-8.1.1.zip",
+  "integrity": "sha256-I3eLrY7boS125AddoG21kfOw48bASSjO1KcoLKNADl0=",
+  "strip_prefix": "fmt-8.1.1",
+  "patches": {
+    "add-build.patch": "sha256-eOtkop4yfcRfAO64PFZgEgoN0bIHj9yFp47UOyTRJ8E="
+  },
+  "patch_strip": 0
+}
