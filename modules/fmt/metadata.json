@@ -1,6 +1,9 @@
 {
   "homepage": "https://github.com/fmtlib/fmt",
   "maintainers": [],
-  "versions": [],
+  "versions": [
+    "8.1.1",
+    "8.1.0"
+  ],
   "yanked_versions": []
 }
