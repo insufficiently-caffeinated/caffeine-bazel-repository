@@ -1,0 +1,4 @@
+module(
+    name = "magic_enum",
+    version = "0.7.3",
+)
