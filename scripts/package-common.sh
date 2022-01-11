@@ -4,6 +4,25 @@ function digest() (
   echo "sha256-$(cat "$1" | openssl dgst -sha256 -binary | openssl base64 -A)"
 )
 
+function update_metadata() (
+  package="$1"
+  version="$2"
+  metadata="modules/$package/metadata.json"
+
+  if [ ! -f "$metadata" ]; then
+    cat > "$metadata" << EOF
+{
+  "homepage": "TODO",
+  "maintainers": [],
+  "versions": []
+}
+EOF
+  fi
+
+  cat "$metadata" | jq '.versions += ["'"$version"'"]' | sponge "$metadata"
+  cat "$metadata" | jq '.versions |= unique'           | sponge "$metadata"
+)
+
 function setup() {
   tmpdir=$(mktemp -d -t package-fmt-XXXXXXXXXXX)
   trap "rm -rf $tmpdir" EXIT
@@ -26,6 +45,8 @@ module(
     version = "$version",
 )
 EOF
+
+  update_metadata "$package" "$version"
 }
 
 function generate_insert_patch() (
