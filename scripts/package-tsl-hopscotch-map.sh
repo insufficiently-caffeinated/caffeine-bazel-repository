@@ -29,7 +29,7 @@ cat > "$outdir/source.json" << EOF
 {
   "url": "$url",
   "integrity": "$(digest "$tmpdir/$package.zip")",
-  "strip_prefix": "$package-$version"
+  "strip_prefix": "hopscotch-map-$version",
   "patches": {
     "add-build.patch": "$(digest "$patch")"
   },

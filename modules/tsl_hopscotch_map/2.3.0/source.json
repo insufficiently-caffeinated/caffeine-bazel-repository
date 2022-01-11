@@ -1,7 +1,7 @@
 {
   "url": "https://github.com/Tessil/hopscotch-map/archive/refs/tags/v2.3.0.zip",
   "integrity": "sha256-Vs5P9nIVZWBl7hoIlIUzuvlEfERAGW6lEzwCSFYAaTg=",
-  "strip_prefix": "tsl_hopscotch_map-2.3.0"
+  "strip_prefix": "hopscotch-map-2.3.0",
   "patches": {
     "add-build.patch": "sha256-brmaEZMmuB2w6+H76k8Mi1PeUqH7cKiwa78x5XKdZiU="
   },

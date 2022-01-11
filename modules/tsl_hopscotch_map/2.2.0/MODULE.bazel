@@ -1,0 +1,4 @@
+module(
+    name = "tsl_hopscotch_map",
+    version = "2.2.0",
+)

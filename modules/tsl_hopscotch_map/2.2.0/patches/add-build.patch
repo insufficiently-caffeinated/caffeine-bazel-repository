@@ -1,0 +1,9 @@
+--- BUILD	1970-01-01 01:00:00.000000000 +0100
++++ BUILD	2020-01-01 01:00:00.000000000 +0100
+@@ -0,0 +0,6 @@
++cc_library(
++    name = "hopscotch-map",
++    hdrs = glob(["include/**/*.h"]),
++    strip_include_prefix = "include",
++    visibility = ["//visibility:public"],
++)
