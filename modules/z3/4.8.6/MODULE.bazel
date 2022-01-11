@@ -1,0 +1,4 @@
+module(
+    name = "z3",
+    version = "4.8.6",
+)

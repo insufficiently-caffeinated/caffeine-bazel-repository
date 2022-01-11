@@ -1,0 +1,11 @@
+{
+  "url": "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.8.9.zip",
+  "integrity": "sha256-xGc27hc4CNwk3Md1Gs55riQvkgm5vire9GOzEpiH7Zs=",
+  "strip_prefix": "z3-z3-4.8.9",
+  "patches": {
+    "add-build.patch":   "sha256-az0QIIJx9RyEZzzwxSmo3tVnwR4tY9KSTdthJpJgTEM=",
+    "add-utils.patch":   "sha256-VxctUSqyxhdN5wSIn3LD3EyLBmU1Nzq8Vx5niXbDmjE=",
+    "add-version.patch": "sha256-0BbpA2pKV2xWler4+gRZfIgAhNUhl5Kio61AqAYZN9c="
+  },
+  "patch_strip": 0
+}
