@@ -46,6 +46,7 @@ mem_initializer(
 )
 
 PYGFILES = glob(["src/**/*.pyg"])
+
 PYGHDRS = [
     pyg[:-len("pyg")] + "hpp"
     for pyg in PYGFILES
@@ -71,62 +72,68 @@ EXCLUDES = [
     "src/test/**",
 ]
 
-Z3_HDRS = glob(["src/**/*.h"], exclude = EXCLUDES)
+Z3_HDRS = glob(
+    ["src/**/*.h"],
+    exclude = EXCLUDES,
+)
 
 gen_api(
     name = "gen_api",
-    hdrs = Z3_HDRS,
     out = "src/api/api_log_macros.h",
+    hdrs = Z3_HDRS,
 )
 
 gen_db(
     name = "gen_db",
+    out = "src/ast/pattern/database.h",
     hdrs = Z3_HDRS,
     smt2 = "src/ast/pattern/database.smt2",
-    out = "src/ast/pattern/database.h",
 )
 
 gen_install_tactic(
     name = "gen_install_tactic",
-    hdrs = Z3_HDRS,
     out = "src/install_tactic.cpp",
+    hdrs = Z3_HDRS,
 )
 
 gen_gparams(
     name = "gen_gparams",
-    hdrs = Z3_HDRS,
     out = "src/gparams_register_modules.cpp",
+    hdrs = Z3_HDRS,
 )
 
 gen_version(
     name = "gen_version",
-    version = VERSION,
     out = "src/util/z3_version.h",
+    version = VERSION,
 )
 
 cc_library(
     name = "z3-impl",
-    hdrs = Z3_HDRS + PYGHDRS + [
-        "src/api/api_log_macros.h",
-        "src/ast/pattern/database.h",
-        "src/util/z3_version.h",
-    ],
-    srcs = glob(["src/**/*.cpp"], exclude = EXCLUDES) + [
+    srcs = glob(
+        ["src/**/*.cpp"],
+        exclude = EXCLUDES,
+    ) + [
         ":gen_api",
         ":gen_mem_initializer",
         "src/install_tactic.cpp",
         "src/gparams_register_modules.cpp",
     ],
-    strip_include_prefix = "src",
+    hdrs = Z3_HDRS + PYGHDRS + [
+        "src/api/api_log_macros.h",
+        "src/ast/pattern/database.h",
+        "src/util/z3_version.h",
+    ],
     local_defines = [
         "_MP_INTERNAL",
     ],
+    strip_include_prefix = "src",
 )
 
 cc_binary(
     name = "z3-shared",
-    deps = [":z3-impl"],
     linkshared = True,
+    deps = [":z3-impl"],
 )
 
 cc_import(
@@ -149,11 +156,8 @@ cc_library(
     ]) + [
         "src/api/z3.h",
     ],
+    implementation_deps = [":z3-impl"],
     strip_include_prefix = "src/api",
-    deps = [
-        # TODO: This should use implementation_deps once bazel 5.0 is out
-        ":z3-impl",
-        ":z3-cpp-api",
-    ],
     visibility = ["//visibility:public"],
+    deps = [":z3-cpp-api"],
 )

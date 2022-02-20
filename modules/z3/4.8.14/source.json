@@ -3,7 +3,7 @@
   "integrity": "sha256-ZkiKeKl4eTSSg9h4lQBr2yyrd7QPye87PGz/eToY4fU=",
   "strip_prefix": "z3-z3-4.8.14",
   "patches": {
-    "add-build.patch":   "sha256-az0QIIJx9RyEZzzwxSmo3tVnwR4tY9KSTdthJpJgTEM=",
+    "add-build.patch":   "sha256-bVZ5xSr44hPFZiQ7gpDGxXhYevHv51bwNDDYEv1sURs=",
     "add-utils.patch":   "sha256-VxctUSqyxhdN5wSIn3LD3EyLBmU1Nzq8Vx5niXbDmjE=",
     "add-version.patch": "sha256-jhXxeA3pU96DGwxarsU2Tzn93HRXYShBzL+8eH3IsBA="
   },
