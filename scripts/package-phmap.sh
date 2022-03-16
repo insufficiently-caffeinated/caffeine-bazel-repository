@@ -13,7 +13,7 @@ wget -q "$url" -O "$tmpdir/$package.zip"
 mkdir -p "$outdir/patches"
 build_patch="$outdir/patches/add-build.patch"
 
-generate_insert_patch BUILD "scripts/data/z3/BUILD" > "$build_patch"
+generate_insert_patch BUILD "scripts/data/$package/BUILD" > "$build_patch"
 
 cat > "$outdir/source.json" << EOF
 {

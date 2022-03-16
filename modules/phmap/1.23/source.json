@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/greg7mdp/parallel-hashmap/archive/refs/tags/1.23.zip",
+  "integrity": "sha256-T+rCNDnSFgiH57nJyKwHSQ/wVRYVlf1I4xqTqRk2rzI=",
+  "strip_prefix": "parallel-hashmap-1.23",
+  "patches": {
+    "add-build.patch":   "sha256-05qDqBHz0NAg9bvF7Or1mVV7sP9k9132FvZyW94Q8Aw="
+  },
+  "patch_strip": 0
+}

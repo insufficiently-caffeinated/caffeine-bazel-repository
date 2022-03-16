@@ -1,0 +1,4 @@
+module(
+    name = "phmap",
+    version = "1.30",
+)
